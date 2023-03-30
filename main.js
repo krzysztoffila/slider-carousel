@@ -23,6 +23,7 @@ const changeSlide = () => {
     if (active === slideList.length) {
         active = 0;
     }
+    // Iterujemy po slideList[iteracja]
     image.src = slideList[active].img;
     h1.textContent = slideList[active].text;
 }
