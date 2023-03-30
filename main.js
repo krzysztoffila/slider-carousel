@@ -13,9 +13,20 @@ const slideList = [{
 ];
 const image = document.querySelector('img.slider');
 const h1 = document.querySelector('h1.slider');
+// Zamiana z nodeList na tablice + ...rest
+const dots = [...document.querySelectorAll('.dots span')];
 /* Interfejs */
 const time = 3000;
 let active = 0;
+/* Implementacje */
+const changeDot = () => {
+    // Wykonujemy na kadym elemencie tablicy, gdy zwróci true to findIndex się zatrzymuje
+    // .contains sprawdza czy zawiera klasę active - zwróci jej index
+    const activeDot = dots.findIndex(item => item.classList.contains('active'));
+    dots[activeDot].classList.remove('active');
+    // chcemy dodać do elem który jest avtie a nie dla innego dlatego usuwamy wyzej
+    dots[active].classList.add('active');
+}
 
 const changeSlide = () => {
     active++;
@@ -26,9 +37,7 @@ const changeSlide = () => {
     // Iterujemy po slideList[iteracja]
     image.src = slideList[active].img;
     h1.textContent = slideList[active].text;
+    // changeDot()
 }
 
 setInterval(changeSlide, time);
-
-
-/* Implementacje */
