@@ -37,7 +37,7 @@ const changeSlide = () => {
     // Iterujemy po slideList[iteracja]
     image.src = slideList[active].img;
     h1.textContent = slideList[active].text;
-    // changeDot()
+    changeDot()
 }
 
 setInterval(changeSlide, time);
