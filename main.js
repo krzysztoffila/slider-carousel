@@ -39,5 +39,5 @@ const changeSlide = () => {
     h1.textContent = slideList[active].text;
     changeDot()
 }
-
+// DODAĆ obsluge na klawisze w lewo i prawo: klawisz lewo keyCode 37 , klawisz prawo keyCode 39
 setInterval(changeSlide, time);
